@@ -1,0 +1,134 @@
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
+intents:
+- goodbye
+- greet
+- thanks
+- current_matches
+- affirm
+- deny
+- ticket_status
+- whats_up
+- compliment
+- welcomed
+- positive
+- negative
+- rude
+- hobby
+- thank_u
+- state
+- small_talk
+- positive_greet
+- negative_greet
+- apologies
+- Email
+- inform
+entities:
+- Email
+- email
+slots:
+  Email:
+    type: unfeaturized
+responses:
+  utter_greet:
+  - text: Hello! 😀
+  - text: Hi! 😀
+  - text: Hey! 😀
+  - text: Greetings! 😀
+  - text: Hey there 😀
+  utter_did_that_help:
+  - text: Did that help you?
+  - text: I hope that solved your query
+  utter_goodbye:
+  - text: Talk to you later.👋🏻
+  - text: Bye bye :(👋🏻
+  - text: Thank you! Bye!👋🏻
+  - text: see ya!👋🏻
+  utter_default:
+  - text: I am sorry, I didn't get that. 😖 Could you please repeat your query?
+  - text: I am not sure what you are aiming for 😖.
+  utter_gratitude:
+  - text: "Glad that I could be of help to you!👋🏻Bye"
+  utter_ask_again:
+  - text: Okay! Let's start again, please tell me what do you need?
+  - text: "No issues! Let's try this again.🧐 Please repeat your query?"
+  utter_ticket_status:
+  - text: Please enter your ticket ID. 🎟
+  action_match_news:
+  - text: Anything else do you want to know?😎
+  utter_ticket_status_not_found:
+  - text: Didn't found your ticket, could you please create it?
+  utter_ticket_status_found:
+  - text: Here's your ticket
+  utter_rude:
+  - text: Kindly avoid using profane language. 🤭
+  utter_apologies:
+  - text: That's alright. No worries. 🤟🏻
+  utter_compliment:
+  - text: Thanks a lot. 🤝
+  utter_laugh:
+  - text: laughing is good for your health. Keep it up. 😂
+  utter_positive:
+  - text: Yes, Of Course 😊
+  - text: Sure😊
+  - text: absolutely😊
+  - text: affirmative😊
+  utter_negative:
+  - text: nope 😵
+  - text: nay 😵
+  - text: not likely 😵
+  - text: negative 😵
+  - text: no way 😵
+  utter_whats_up:
+  - text: Nothing much! How have you been.
+  utter_state:
+  - text: I am doing Great. How are you ?
+  - text: Everything is going extremely well.  </br> How
+      are you ?
+  utter_small_talk:
+  - text: Nice to meet you too 
+  - text: Thank you. It is very nice to meet you as well 
+  - text: Am glad to meet you too 
+  utter_welcomed:
+  - text: 
+  utter_thank_u:
+  - text: Its my pleasure. 😁
+  utter_positive_greet:
+  - text: That's great.
+  utter_negative_greet:
+  - text: Sorry to hear that. 😔 how can I help you
+      today ?
+  utter_generating_token_hold:
+  - text: Hold on generated token for you.........
+  utter_ask_Email:
+  - text: What's your business email?
+actions:
+- utter_greet
+- utter_did_that_help
+- utter_goodbye
+- utter_default
+- utter_gratitude
+- utter_ask_again
+- utter_ticket_status
+- utter_ticket_status_not_found
+- utter_ticket_status_found
+- utter_small_talk
+- utter_whats_up
+- utter_state
+- utter_positive
+- utter_negative
+- utter_laugh
+- utter_rude
+- utter_apologies
+- utter_compliment
+- utter_welcomed
+- utter_thank_u
+- utter_positive_greet
+- utter_negative_greet
+- action_match_news
+- action_Generate_Token
+- utter_generating_token_hold
+- utter_ask_Email
+forms:
+- Email_form

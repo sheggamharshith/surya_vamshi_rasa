@@ -1,0 +1,4 @@
+{
+    "status": "Success",
+    "message": "Inactive User or UserName not found."
+}
