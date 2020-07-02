@@ -123,10 +123,10 @@ class GenerateToken(Action):
             generatedJson = wapitest.get_All_Request(generatedToken , tracker.get_slot("Email"))
             json_format = generatedJson.json()
             file_saving.file_saver(json_format)
-            dispatcher.utter_message(text="now geting the json for you [this](http://{}) ".format(generatedJson.json()))
+            dispatcher.utter_message(text="now geting the json for you [this]".format(generatedJson.json()))
 
         except:
-            dispatcher.utter_message(text=" Sorry there something wrong 😖 with the token.Please contact to the management🏢")
+            dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
         return []
 
 
