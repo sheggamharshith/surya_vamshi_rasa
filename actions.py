@@ -27,7 +27,7 @@ from rasa_sdk.forms import FormAction
 #
 #         return []
 
-######################################### This is for the initlizing the########################################### 
+######################################### This is for the initlizing the Json Text########################################### 
 def file_saver(json_format):
     json_dump_out_put = json.dumps(json_format)
     requiredData = json.loads(json_dump_out_put)
@@ -106,10 +106,11 @@ class Email(FormAction):
 
 
 
-
+####################################This for generating the token#################################################
 
 class GenerateToken(Action):
     """ This class will do custom api and generate the token """
+    """  The modules are imported from the wapitest please make sure go through the function block of the code"""
     def name(self) -> Text:
         return "action_Generate_Token"
 
@@ -123,10 +124,99 @@ class GenerateToken(Action):
             generatedJson = wapitest.get_All_Request(generatedToken , tracker.get_slot("Email"))
             json_format = generatedJson.json()
             file_saving.file_saver(json_format)
-            dispatcher.utter_message(text="now geting the json for you [this]".format(generatedJson.json()))
+            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson.json()))
 
         except:
             dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
         return []
 
 
+class CreaterequestToken(Action):
+    """ This class will do custom api and generate the token """
+    """  The modules are imported from the wapitest please make sure go through the function block of the code"""
+    def name(self) -> Text:
+        return "action_Create_request_Token"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        try:
+            print("this went to the the create request token")
+            generatedToken = wapitest.login_module()
+            print(generatedToken)
+            dispatcher.utter_message(text="Here is you token for you validation {}".format(generatedToken))
+            generatedJson = wapitest.create_Request(generatedToken , tracker.get_slot("Email"))
+            json_format = generatedJson.json()
+            #file_saving.file_saver(json_format)
+            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson.json()))
+
+        except:
+            dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
+        return []
+
+class updaterequestToken(Action):
+    """ This class will do custom api and generate the token """
+    """  The modules are imported from the wapitest please make sure go through the function block of the code"""
+    def name(self) -> Text:
+        return "action_update_request_Token"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        try:
+            print("this went to the the update request token")
+            generatedToken = wapitest.login_module()
+            print(generatedToken)
+            dispatcher.utter_message(text="Here is you token for you validation {}".format(generatedToken))
+            generatedJson = wapitest.update_request(generatedToken , tracker.get_slot("Email"))
+            json_format = generatedJson.json()
+            #file_saving.file_saver(json_format)
+            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson.json()))
+        except:
+            dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
+        return []
+
+class getCaserequestToken(Action):
+    """ This class will do custom api and generate the token """
+    """  The modules are imported from the wapitest please make sure go through the function block of the code"""
+    def name(self) -> Text:
+        return "action_getcase_request_Token"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        try:
+            print("this went to the the getcase request token")
+            generatedToken = wapitest.login_module()
+            print(generatedToken)
+            dispatcher.utter_message(text="Here is you token for you validation {}".format(generatedToken))
+            generatedJson = wapitest.get_case_details(generatedToken , tracker.get_slot("Email"))
+            json_format = generatedJson.json()
+            #file_saving.file_saver(json_format)
+            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson.json()))
+        except:
+            dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
+        return []
+
+
+class closerequestToken(Action):
+    """ This class will do custom api and generate the token """
+    """  The modules are imported from the wapitest please make sure go through the function block of the code"""
+    def name(self) -> Text:
+        return "action_close_request_Token"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        try:
+            print("this went to the the close request token")
+            generatedToken = wapitest.login_module()
+            print(generatedToken)
+            dispatcher.utter_message(text="Here is you token for you validation {}".format(generatedToken))
+            generatedJson = wapitest.close_Request(generatedToken , tracker.get_slot("Email"))
+            json_format = generatedJson.json()
+            #file_saving.file_saver(json_format)
+            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson.json()))
+        except :
+            dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
+        return []

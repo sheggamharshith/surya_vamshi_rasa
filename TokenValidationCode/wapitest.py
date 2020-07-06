@@ -15,16 +15,18 @@ def login_module():
     return response_token
 
 ###################################### 2. Create Request #########################################
-def create_Request(response_token):
+def create_Request(response_token,EmailId):
     request_url = "https://api-wolken-demo.wolkenservicedesk.com/lur/external/generic/create_request_generic"
 
     # Note: Wrong input from Documentation: Content-Type
-    headers = {"userPsNo": "poornima@wolkensoftware.com", "wolken_token": response_token, "Content-Type": "application/json"}
+    headers = {"userPsNo": EmailId, "wolken_token": response_token, "Content-Type": "application/json"}
 
     data = {"requestMasterVO": {"sourceId": 6, "requestDesc": "Test", "requestedEmail": "testFandLName@gmail.com"}, "descDetailsVO": {"descLarge": "test"}, "userDetails": {"userFname": "testFName", "userLname": "testLname"}}
 
     res11 = requests.post(url=request_url, data=json.dumps(data), headers=headers)
-    
+   
+    print(res11)
+   
     return res11
 
 ##################################### 3. Update Request ###########################################
@@ -38,6 +40,8 @@ def update_request(response_token,EmailId):
 
     all_request_res = requests.post(url=update_request_url, data=json.dumps(data), headers=headers)
     
+    print(all_request_res)
+
     return all_request_res
 
 #################################### 4. Get All Request #########################################
@@ -62,11 +66,11 @@ def get_case_details(response_token,EmailId):
 
     case_res = requests.get(url=url, headers=headers)
 
-    #print(case_res.json())
-    return url,case_res
+    print(case_res.json())
+    return case_res
 
 #################################### 6. Close Request #########################################
-def close_Request(response_token,url,EmailId):
+def close_Request(response_token,EmailId):
     close_request_url = "https://api-wolken-demo.wolkenservicedesk.com/lur/external/generic/update_request"
 
     # Note: Wrong input from Documentation: Content-Type
@@ -75,5 +79,6 @@ def close_Request(response_token,url,EmailId):
     data = {"requestId": 1513602290, "threadVO": {"resDesc": "Test"}, "otherInfoVO": {"milestoneId": 7}}
 
     # Note: Wrong input from Documentation: Method
-    close_res = requests.get(url=url, headers=headers, data = json.dumps(data))
+    close_res = requests.get(url=close_request_url, headers=headers, data = json.dumps(data))
+    print(close_res.json())
     return close_res

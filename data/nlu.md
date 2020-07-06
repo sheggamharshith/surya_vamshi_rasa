@@ -86,6 +86,41 @@
 - what's my ticket status
 
 
+## intent:request_status
+- what is ticket create
+- i want to create a ticket
+- ticket create
+- create ticket
+- i want to create a ticket
+- create 
+- create a ticket from my mail id
+
+## intent:update_request_status
+- what is update ticket 
+- ticket update 
+- update ticket
+- update my ticket
+- ticket updation 
+- update
+
+## intent:get_case_request_status
+- what is get case ticket 
+- get case ticket  
+- case ticket
+- update my get case ticket
+- ticket case
+- get case 
+- ticket get case
+
+## intent:close_request_status
+- i want to close request
+- close request
+- request close
+- update my get case ticket
+- ticket close
+- close
+- close ticket
+
 ## intent: small_talk
 - nice to meet you
 - nice meeting you

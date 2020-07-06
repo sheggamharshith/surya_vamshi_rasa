@@ -24,6 +24,10 @@ intents:
 - apologies
 - Email
 - inform
+- request_status
+- update_request_status
+- get_case_request_status
+- close_request_status
 entities:
 - Email
 - email
@@ -128,5 +132,9 @@ actions:
 - action_Generate_Token
 - utter_generating_token_hold
 - utter_ask_Email
+- action_Create_request_Token
+- action_update_request_Token
+- action_getcase_request_Token
+- action_close_request_Token
 forms:
 - Email_form
