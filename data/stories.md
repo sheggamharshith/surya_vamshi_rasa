@@ -88,3 +88,8 @@
     - utter_state
 * negative_greet
     - utter_negative_greet
+
+
+## INTIAL GREET 
+* intial_greet
+    - utter_greet_sentence

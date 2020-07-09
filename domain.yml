@@ -28,6 +28,7 @@ intents:
 - update_request_status
 - get_case_request_status
 - close_request_status
+- intial_greet
 entities:
 - Email
 - email
@@ -105,6 +106,19 @@ responses:
   - text: Hold on generated token for you.........
   utter_ask_Email:
   - text: What's your business email?
+  utter_greet_sentence:
+  - buttons:
+    - payload: /ticket_status
+      title: Ticket Status
+    - payload: /request_status
+      title: Request Status
+    - payload: /update_request_status
+      title: Update Request
+    - payload: /get_case_request_status
+      title: get case Details
+    - payload: /close_request_status
+      title: close request
+    text: hey there what you want me to do
 actions:
 - utter_greet
 - utter_did_that_help
@@ -136,5 +150,6 @@ actions:
 - action_update_request_Token
 - action_getcase_request_Token
 - action_close_request_Token
+- utter_greet_sentence
 forms:
 - Email_form

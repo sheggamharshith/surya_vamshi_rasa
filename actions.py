@@ -118,6 +118,7 @@ class GenerateToken(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         try:
+            print("this is form the generate ticket status")
             generatedToken = wapitest.login_module()
             print(generatedToken)
             dispatcher.utter_message(text="Here is you token for you validation {}".format(generatedToken))
@@ -125,7 +126,6 @@ class GenerateToken(Action):
             json_format = generatedJson.json()
             file_saving.file_saver(json_format)
             dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson.json()))
-
         except:
             dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
         return []
@@ -146,10 +146,9 @@ class CreaterequestToken(Action):
             print(generatedToken)
             dispatcher.utter_message(text="Here is you token for you validation {}".format(generatedToken))
             generatedJson = wapitest.create_Request(generatedToken , tracker.get_slot("Email"))
-            json_format = generatedJson.json()
+            #json_format = generatedJson.json()
             #file_saving.file_saver(json_format)
-            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson.json()))
-
+            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson))
         except:
             dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
         return []
@@ -186,6 +185,7 @@ class getCaserequestToken(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         try:
+            print("this is form the getcase ticket status")
             print("this went to the the getcase request token")
             generatedToken = wapitest.login_module()
             print(generatedToken)

@@ -1,7 +1,8 @@
 from requests.auth import HTTPBasicAuth
 import requests
 import json
-
+import os
+from Naked.toolshed.shell import execute_js, muterun_js
 ####################################### 1. login module ##########################################
 def login_module():
     login_url = "https://api-wolken-demo.wolkenservicedesk.com/lur/external/login/authenticate"
@@ -19,15 +20,17 @@ def create_Request(response_token,EmailId):
     request_url = "https://api-wolken-demo.wolkenservicedesk.com/lur/external/generic/create_request_generic"
 
     # Note: Wrong input from Documentation: Content-Type
-    headers = {"userPsNo": EmailId, "wolken_token": response_token, "Content-Type": "application/json"}
+    os.remove("C:\\Users\harsh\\Desktop\\ai intern\\ai intern\\TokenValidationCode\\final_prg\\input_db.json")
+    print("File Removed!")
+    headers = {"userEmail":EmailId,"wolken_token":response_token,"Content-Type":"application/json"}
+    with open('C:\\Users\harsh\\Desktop\\ai intern\\ai intern\\TokenValidationCode\\final_prg\\input_db.json', "w") as write_file:
+        json.dump(headers, write_file)
+    success = execute_js('.\\TokenValidationCode\\final_prg\\final_prg.js')
+    with open("C:\\Users\harsh\\Desktop\\ai intern\\ai intern\\TokenValidationCode\\final_prg\\outpt.json", "r") as read_file:
+        data = json.load(read_file)
+    print(data)
+    return data
 
-    data = {"requestMasterVO": {"sourceId": 6, "requestDesc": "Test", "requestedEmail": "testFandLName@gmail.com"}, "descDetailsVO": {"descLarge": "test"}, "userDetails": {"userFname": "testFName", "userLname": "testLname"}}
-
-    res11 = requests.post(url=request_url, data=json.dumps(data), headers=headers)
-   
-    print(res11)
-   
-    return res11
 
 ##################################### 3. Update Request ###########################################
 def update_request(response_token,EmailId):
