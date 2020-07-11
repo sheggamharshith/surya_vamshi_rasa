@@ -1,5 +1,5 @@
-## intent:goodbye  
-- Bye 
+## intent:goodbye
+- Bye
 - Goodbye
 - See you later
 - Bye bot
@@ -85,31 +85,29 @@
 - can i know my ticket status
 - what's my ticket status
 
-
 ## intent:request_status
 - what is ticket create
 - i want to create a ticket
 - ticket create
 - create ticket
-- i want to create a ticket
-- create 
+- create
 - create a ticket from my mail id
 
 ## intent:update_request_status
-- what is update ticket 
-- ticket update 
+- what is update ticket
+- ticket update
 - update ticket
 - update my ticket
-- ticket updation 
+- ticket updation
 - update
 
 ## intent:get_case_request_status
-- what is get case ticket 
-- get case ticket  
+- what is get case ticket
+- get case ticket
 - case ticket
 - update my get case ticket
 - ticket case
-- get case 
+- get case
 - ticket get case
 
 ## intent:close_request_status
@@ -121,7 +119,7 @@
 - close
 - close ticket
 
-## intent: small_talk
+## intent:small_talk
 - nice to meet you
 - nice meeting you
 - It was nice to have met you
@@ -131,7 +129,7 @@
 - nice to see you
 - great interacting with you
 
-## intent: state
+## intent:state
 - How are you
 - how are you doing
 - how do you do
@@ -142,7 +140,7 @@
 - How is your day going
 - how have you been lately
 
-## intent: thank_u
+## intent:thank_u
 - thank you
 - thanks
 - thank you for your help
@@ -151,7 +149,7 @@
 - ok thank you
 - i appreciate your help
 
-## intent: whats_up
+## intent:whats_up
 - whats going on
 - whats up
 - what is going on
@@ -160,7 +158,7 @@
 - what are you doing now
 - what are your plans today
 
-## intent: compliment
+## intent:compliment
 - wow you are great
 - you are awesome
 - that's awesome
@@ -168,21 +166,21 @@
 - you are smart
 - you are smarter than me
 
-## intent: welcomed
+## intent:welcomed
 - you are welcomed
 - you are welcome
 - It is my pleasure
 - pleasure is mine
 - Its my pleasure
 
-## intent: positive
+## intent:positive
 - do you like talking to me
 - do you like human
 - are you intelligent
 - are you smart
 - are you shy
 
-## intent: negative
+## intent:negative
 - are you alien
 - do you hate me
 - Can you feel anything
@@ -190,7 +188,7 @@
 - do you have feelings
 - Are you tired
 
-## intent: rude
+## intent:rude
 - ass
 - stupid
 - dickhead
@@ -202,7 +200,7 @@
 - bitch
 - whore
 
-## intent: hobby
+## intent:hobby
 - do you have any hobby
 - do you have any hobbies
 - what's your favourite hobby
@@ -212,7 +210,7 @@
 - what are your hobbies
 - what do you like doing
 
-## intent: positive_greet
+## intent:positive_greet
 - Not bad
 - just chilling
 - marvellous
@@ -229,7 +227,7 @@
 - I am doing great
 - great. thanks for asking
 
-## intent: negative_greet
+## intent:negative_greet
 - bad
 - bad mood
 - i am in a bad mood
@@ -256,6 +254,6 @@
 - This is my email id [suray@isro.in](Email)
 - [surya@facebook.net] (Email)
 
-
-## intent: intial_greet
+## intent:intial_greet
 - start thr testing process
+- testing process
