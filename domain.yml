@@ -5,7 +5,6 @@ intents:
 - goodbye
 - greet
 - thanks
-- current_matches
 - affirm
 - deny
 - ticket_status
@@ -29,9 +28,11 @@ intents:
 - get_case_request_status
 - close_request_status
 - intial_greet
+- FirstName
 entities:
 - Email
 - email
+- FisrtName
 slots:
   Email:
     type: unfeaturized
@@ -111,14 +112,14 @@ responses:
     - payload: /ticket_status
       title: Ticket Status
     - payload: /request_status
-      title: Request Status
+      title: Create Ticket
     - payload: /update_request_status
       title: Update Request
     - payload: /get_case_request_status
-      title: get case Details
+      title: Get Case Details
     - payload: /close_request_status
       title: close request
-    text: hey there what you want me to do
+    text: hey there ! Please select the option below
 actions:
 - utter_greet
 - utter_did_that_help
