@@ -51,6 +51,7 @@ class Email(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         return [
             "Email",
+            "FirstName",
             ]
 
     # validating the email id if you want have any custom email id regex equation 
@@ -90,6 +91,11 @@ class Email(FormAction):
         """This function will map the intent of the text"""
         return {
         "Email": [self.from_entity(entity="email"),], # This maps the duckling email id
+         "FirstName":[self.from_entity(entity="FirstName"),
+                    self.from_entity(intent="Email_form"),
+                    self.from_entity(intent="PERSON"),
+                    self.from_entity(entity="FirstName"),self.from_text()
+         ]
         }
 
 
@@ -103,9 +109,6 @@ class Email(FormAction):
         print("I have received the Email id: {}".format(tracker.get_latest_entity_values("Email")))
         dispatcher.utter_message("Saving your email id as {}".format(tracker.get_slot("Email")))
         return []
-
-
-
 ####################################This for generating the token#################################################
 
 class GenerateToken(Action):

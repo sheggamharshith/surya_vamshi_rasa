@@ -28,7 +28,6 @@ intents:
 - get_case_request_status
 - close_request_status
 - intial_greet
-- FirstName
 entities:
 - Email
 - email
