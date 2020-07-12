@@ -92,8 +92,8 @@ class Email(FormAction):
         return {
         "Email": [self.from_entity(entity="email"),], # This maps the duckling email id
          "FirstName":[self.from_entity(entity="FirstName"),
-                    self.from_entity(intent="Email_form"),
-                    self.from_entity(intent="PERSON"),
+                    self.from_entity(intent="infrom", entity="FirstName"),
+                    self.from_entity(entity="PERSON"),
                     self.from_entity(entity="FirstName"),self.from_text()
          ]
         }
