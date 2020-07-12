@@ -31,9 +31,11 @@ intents:
 entities:
 - Email
 - email
-- FisrtName
+- FirstName
 slots:
   Email:
+    type: unfeaturized
+  FirstName:
     type: unfeaturized
 responses:
   utter_greet:
