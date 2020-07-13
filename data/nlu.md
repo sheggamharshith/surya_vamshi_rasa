@@ -253,12 +253,13 @@
 - email id is [surya@facebook.com](Email)
 - This is my email id [suray@isro.in](Email)
 - [surya@facebook.net] (Email)
-- My name is [harshith](FirstName) 
-- my name is [ramulu](FirstName) 
-- they call me [vamshi](FirstName) 
-- call me [shiva](FirstName) 
+- My name is [harshith](FirstName)
+- my name is [ramulu](FirstName)
+- they call me [vamshi](FirstName)
+- call me [shiva](FirstName)
+- i want to change the email id to poornima@wolkensoftware.com
+
 ## intent:intial_greet
 - start thr testing process
 - testing process
-
-
+- start the testing process fro the client 
