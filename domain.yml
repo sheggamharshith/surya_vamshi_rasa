@@ -28,14 +28,18 @@ intents:
 - get_case_request_status
 - close_request_status
 - intial_greet
+- requestIdIn
 entities:
 - Email
 - email
 - FirstName
+- requestId
 slots:
   Email:
     type: unfeaturized
   FirstName:
+    type: unfeaturized
+  requestId:
     type: unfeaturized
 responses:
   utter_greet:
@@ -158,3 +162,4 @@ actions:
 - utter_ask_FirstName
 forms:
 - Email_form
+- requestId_form
