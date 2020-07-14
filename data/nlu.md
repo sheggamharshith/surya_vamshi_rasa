@@ -266,11 +266,6 @@
 - start thr testing process
 - testing process
 
-## intent:requestIdIn
-- 12232121
-- my request id is 112312
-- 1212131212
-- 12123132131
 
 ## intent:createNewApiRequest
 - I need to generate a ticket for my api request 
