@@ -97,6 +97,3 @@
 * intial_greet
     - utter_greet_sentence
 
-## create a new Api
-* createNewApiRequest
-	- utter_createNewAPIToken
