@@ -1,225 +1,172 @@
---- 
-actions: 
-  - utter_greet
-  - utter_did_that_help
-  - utter_goodbye
-  - utter_default
-  - utter_gratitude
-  - utter_ask_again
-  - utter_ticket_status
-  - utter_ticket_status_not_found
-  - utter_ticket_status_found
-  - utter_small_talk
-  - utter_whats_up
-  - utter_state
-  - utter_positive
-  - utter_negative
-  - utter_laugh
-  - utter_rude
-  - utter_apologies
-  - utter_compliment
-  - utter_welcomed
-  - utter_thank_u
-  - utter_positive_greet
-  - utter_negative_greet
-  - action_match_news
-  - action_Generate_Token
-  - utter_generating_token_hold
-  - utter_ask_Email
-  - action_Create_request_Token
-  - action_update_request_Token
-  - action_getcase_request_Token
-  - action_close_request_Token
-  - utter_greet_sentence
-  - utter_ask_FirstName
-  - utter_requestId
-entities: 
-  - Email
-  - email
-  - FirstName
-  - requestId
-forms: 
-  - Email_form
-  - requestId_form
-intents: 
-  - carServiceTicket
-  - goodbye
-  - greet
-  - thanks
-  - affirm
-  - deny
-  - ticket_status
-  - whats_up
-  - compliment
-  - welcomed
-  - positive
-  - negative
-  - rude
-  - hobby
-  - thank_u
-  - state
-  - small_talk
-  - positive_greet
-  - negative_greet
-  - apologies
-  - Email
-  - inform
-  - request_status
-  - update_request_status
-  - get_case_request_status
-  - close_request_status
-  - intial_greet
-responses: 
-  action_match_news: 
-    - 
-      text: "Anything else do you want to know?😎"
-  utter_apologies: 
-    - 
-      text: "That's alright. No worries. 🤟🏻"
-  utter_ask_Email: 
-    - 
-      text: "What's your business email?"
-  utter_ask_FirstName: 
-    - 
-      text: "what is your name"
-  utter_ask_again: 
-    - 
-      text: "Okay! Let's start again, please tell me what do you need?"
-    - 
-      text: "No issues! Let's try this again.🧐 Please repeat your query?"
-  utter_car_service_respinse: 
-    - 
-      text: "okey i will generate a ticket for you car service"
-  utter_compliment: 
-    - 
-      text: "Thanks a lot. 🤝"
-  utter_default: 
-    - 
-      text: "I am sorry, I didn't get that. 😖 Could you please repeat your query?"
-    - 
-      text: "I am not sure what you are aiming for 😖."
-  utter_did_that_help: 
-    - 
-      text: "Did that help you?"
-    - 
-      text: "I hope that solved your query"
-  utter_generating_token_hold: 
-    - 
-      text: "Hold on generated token for you........."
-  utter_goodbye: 
-    - 
-      text: "Talk to you later.👋🏻"
-    - 
-      text: "Bye bye :(👋🏻"
-    - 
-      text: "Thank you! Bye!👋🏻"
-    - 
-      text: "see ya!👋🏻"
-  utter_gratitude: 
-    - 
-      text: "Glad that I could be of help to you!👋🏻Bye"
-  utter_greet: 
-    - 
-      text: "Hello! 😀"
-    - 
-      text: "Hi! 😀"
-    - 
-      text: "Hey! 😀"
-    - 
-      text: "Greetings! 😀"
-    - 
-      text: "Hey there 😀"
-  utter_greet_sentence: 
-    - 
-      buttons: 
-        - 
-          payload: /ticket_status
-          title: "Ticket Status"
-        - 
-          payload: /request_status
-          title: "Create Ticket"
-        - 
-          payload: /update_request_status
-          title: "Update Request"
-        - 
-          payload: /get_case_request_status
-          title: "Get Case Details"
-        - 
-          payload: /close_request_status
-          title: "close request"
-      text: "hey there ! Please select the option below"
-  utter_laugh: 
-    - 
-      text: "laughing is good for your health. Keep it up. 😂"
-  utter_negative: 
-    - 
-      text: "nope 😵"
-    - 
-      text: "nay 😵"
-    - 
-      text: "not likely 😵"
-    - 
-      text: "negative 😵"
-    - 
-      text: "no way 😵"
-  utter_negative_greet: 
-    - 
-      text: "Sorry to hear that. 😔 how can I help you today ?"
-  utter_positive: 
-    - 
-      text: "Yes, Of Course 😊"
-    - 
-      text: Sure😊
-    - 
-      text: absolutely😊
-    - 
-      text: affirmative😊
-  utter_positive_greet: 
-    - 
-      text: "That's great."
-  utter_requestId: 
-    - 
-      text: "may i know your request id"
-  utter_rude: 
-    - 
-      text: "Kindly avoid using profane language. 🤭"
-  utter_small_talk: 
-    - 
-      text: "Nice to meet you too"
-    - 
-      text: "Thank you. It is very nice to meet you as well"
-    - 
-      text: "Am glad to meet you too"
-  utter_state: 
-    - 
-      text: "I am doing Great. How are you ?"
-    - 
-      text: "Everything is going extremely well.  </br> How are you ?"
-  utter_thank_u: 
-    - 
-      text: "Its my pleasure. 😁"
-  utter_ticket_status: 
-    - 
-      text: "Please enter your ticket ID. 🎟"
-  utter_ticket_status_found: 
-    - 
-      text: "Here's your ticket"
-  utter_ticket_status_not_found: 
-    - 
-      text: "Didn't found your ticket, could you please create it?"
-  utter_welcomed: 
-    - 
-      text: ~
-  utter_whats_up: 
-    - 
-      text: "Nothing much! How have you been."
-session_config: 
-  carry_over_slots_to_new_session: true
+session_config:
   session_expiration_time: 0
-slots: 
-  Email: 
+  carry_over_slots_to_new_session: true
+intents:
+- carServiceTicket
+- goodbye
+- greet
+- thanks
+- affirm
+- deny
+- ticket_status
+- whats_up
+- compliment
+- welcomed
+- positive
+- negative
+- rude
+- hobby
+- thank_u
+- state
+- small_talk
+- positive_greet
+- negative_greet
+- apologies
+- Email
+- inform
+- request_status
+- update_request_status
+- get_case_request_status
+- close_request_status
+- intial_greet
+- createNewApiRequest
+entities:
+- Email
+- email
+- FirstName
+- requestId
+slots:
+  Email:
     type: unfeaturized
-  FirstName: 
+  FirstName:
     type: unfeaturized
-  requestId: 
+  requestId:
     type: unfeaturized
+responses:
+  action_match_news:
+  - text: Anything else do you want to know?😎
+  utter_apologies:
+  - text: That's alright. No worries. 🤟🏻
+  utter_ask_Email:
+  - text: What's your business email?
+  utter_ask_FirstName:
+  - text: what is your name
+  utter_ask_again:
+  - text: Okay! Let's start again, please tell me what do you need?
+  - text: No issues! Let's try this again.🧐 Please repeat your query?
+  utter_car_service_respinse:
+  - text: okey i will generate a ticket for you car service
+  utter_compliment:
+  - text: Thanks a lot. 🤝
+  utter_default:
+  - text: I am sorry, I didn't get that. 😖 Could you please repeat your query?
+  - text: I am not sure what you are aiming for 😖.
+  utter_did_that_help:
+  - text: Did that help you?
+  - text: I hope that solved your query
+  utter_generating_token_hold:
+  - text: Hold on generated token for you.........
+  utter_goodbye:
+  - text: Talk to you later.👋🏻
+  - text: Bye bye :(👋🏻
+  - text: Thank you! Bye!👋🏻
+  - text: see ya!👋🏻
+  utter_gratitude:
+  - text: Glad that I could be of help to you!👋🏻Bye
+  utter_greet:
+  - text: Hello! 😀
+  - text: Hi! 😀
+  - text: Hey! 😀
+  - text: Greetings! 😀
+  - text: Hey there 😀
+  utter_greet_sentence:
+  - buttons:
+    - payload: /ticket_status
+      title: Ticket Status
+    - payload: /request_status
+      title: Create Ticket
+    - payload: /update_request_status
+      title: Update Request
+    - payload: /get_case_request_status
+      title: Get Case Details
+    - payload: /close_request_status
+      title: close request
+    text: hey there ! Please select the option below
+  utter_laugh:
+  - text: laughing is good for your health. Keep it up. 😂
+  utter_negative:
+  - text: nope 😵
+  - text: nay 😵
+  - text: not likely 😵
+  - text: negative 😵
+  - text: no way 😵
+  utter_negative_greet:
+  - text: Sorry to hear that. 😔 how can I help you today ?
+  utter_positive:
+  - text: Yes, Of Course 😊
+  - text: Sure😊
+  - text: absolutely😊
+  - text: affirmative😊
+  utter_positive_greet:
+  - text: That's great.
+  utter_requestId:
+  - text: may i know your request id
+  utter_rude:
+  - text: Kindly avoid using profane language. 🤭
+  utter_small_talk:
+  - text: Nice to meet you too
+  - text: Thank you. It is very nice to meet you as well
+  - text: Am glad to meet you too
+  utter_state:
+  - text: I am doing Great. How are you ?
+  - text: Everything is going extremely well.  </br> How are you ?
+  utter_thank_u:
+  - text: Its my pleasure. 😁
+  utter_ticket_status:
+  - text: Please enter your ticket ID. 🎟
+  utter_ticket_status_found:
+  - text: Here's your ticket
+  utter_ticket_status_not_found:
+  - text: Didn't found your ticket, could you please create it?
+  utter_welcomed:
+  - text:
+  utter_whats_up:
+  - text: Nothing much! How have you been.
+actions:
+- utter_greet
+- utter_did_that_help
+- utter_goodbye
+- utter_default
+- utter_gratitude
+- utter_ask_again
+- utter_ticket_status
+- utter_ticket_status_not_found
+- utter_ticket_status_found
+- utter_small_talk
+- utter_whats_up
+- utter_state
+- utter_positive
+- utter_negative
+- utter_laugh
+- utter_rude
+- utter_apologies
+- utter_compliment
+- utter_welcomed
+- utter_thank_u
+- utter_positive_greet
+- utter_negative_greet
+- action_match_news
+- action_Generate_Token
+- utter_generating_token_hold
+- utter_ask_Email
+- action_Create_request_Token
+- action_update_request_Token
+- action_getcase_request_Token
+- action_close_request_Token
+- utter_greet_sentence
+- utter_ask_FirstName
+- utter_requestId
+- utter_car_service_respinse
+forms:
+- Email_form
+- requestId_form
