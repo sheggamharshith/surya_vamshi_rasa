@@ -2,7 +2,6 @@ session_config:
   session_expiration_time: 0
   carry_over_slots_to_new_session: true
 intents:
-- carServiceTicket
 - goodbye
 - greet
 - thanks
@@ -159,7 +158,6 @@ actions:
 - action_Generate_Token
 - utter_generating_token_hold
 - utter_ask_Email
-- action_Create_request_Token
 - action_update_request_Token
 - action_getcase_request_Token
 - action_close_request_Token
