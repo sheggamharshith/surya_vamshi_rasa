@@ -19,11 +19,11 @@
 ## goodbye path
 * goodbye
   - utter_goodbye
- 
+
 ## Generated Story -6413668704530359754
 * thank_u
     - utter_thank_u
- 
+
 ## ticket status path
 * ticket_status
   - Email_form
@@ -32,12 +32,14 @@
   - action_Generate_Token
 
 ## ticket create request path
-* request_status
+* update_request_status
   - Email_form
   - form{"name": "Email_form"}
   - form{"name": null}
-  - action_Create_request_Token
-
+  - requestId_form
+  - form{"name":"requestId_form"}
+  - form{"name": null}
+  - action_update_request_Token
 
 ## ticket getcase request path
 * get_case_request_status
@@ -45,7 +47,6 @@
   - form{"name": "Email_form"}
   - form{"name": null}
   - action_getcase_request_Token
- 
 
 ## ticket create request path
 * update_request_status
@@ -75,11 +76,11 @@
 ## Generated Story -6413668704530359754
 * apologies
     - utter_apologies
-    
+
 ## Generated Story -6413668704530359754
 * welcomed
     - utter_welcomed
-    
+
 ## Generated Story -6413668704530359754
 * state
     - utter_state
@@ -92,7 +93,10 @@
 * negative_greet
     - utter_negative_greet
 
-
 ## INTIAL GREET 
 * intial_greet
     - utter_greet_sentence
+
+## create a new Api
+* createNewApiRequest
+	- utter_createNewAPIToken
