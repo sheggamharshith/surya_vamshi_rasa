@@ -268,5 +268,5 @@
 - 1212131212
 - 12123132131
 
-## intent:carServiceTicket
-- i need to generate a ticket for my car servicing 
+## intent:createNewApiRequest
+- I need to generate a ticket for my api request 
