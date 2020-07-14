@@ -32,11 +32,14 @@
   - action_Generate_Token
 
 ## ticket create request path
-* request_status
+* update_request_status
   - Email_form
   - form{"name": "Email_form"}
   - form{"name": null}
-  - action_Create_request_Token
+  - requestId_form
+  - form{"name":"requestId_form"}
+  - form{"name": null}
+  - action_update_request_Token
 
 ## ticket getcase request path
 * get_case_request_status
