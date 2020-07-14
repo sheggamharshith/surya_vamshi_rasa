@@ -114,7 +114,6 @@
 - i want to close request
 - close request
 - request close
-- update my get case ticket
 - ticket close
 - close
 - close ticket
