@@ -48,16 +48,6 @@
   - form{"name": null}
   - action_getcase_request_Token
 
-## ticket create request path
-* update_request_status
-  - Email_form
-  - form{"name": "Email_form"}
-  - form{"name": null}
-  - requestId_form
-  - form{"name":"requestId_form"}
-  - form{"name": null}
-  - action_update_request_Token
-
 ## ticket close request path
 * close_request_status
   - Email_form
@@ -96,4 +86,3 @@
 ## INTIAL GREET 
 * intial_greet
     - utter_greet_sentence
-
