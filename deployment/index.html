@@ -4,11 +4,11 @@
     <script>
         WebChat.default.init({
                 selector: "#webchat",
-                initPayload: "start thr testing process",
+                initPayload: "start thr testing process{} ",
                 customData: {
                     "language": "en"
                 }, // arbitrary custom data. Stay minimal as this will be added to the socket
-                socketUrl: "http://localhost:5005",
+                socketUrl: "http://localhost:5005/",
                 socketPath: "/socket.io/",
                 title: "Title",
                 hideWhenNotConnected: false,

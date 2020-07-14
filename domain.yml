@@ -32,10 +32,13 @@ entities:
 - Email
 - email
 - FirstName
+- requestId
 slots:
   Email:
     type: unfeaturized
   FirstName:
+    type: unfeaturized
+  requestId:
     type: unfeaturized
 responses:
   utter_greet:
@@ -122,7 +125,9 @@ responses:
       title: close request
     text: hey there ! Please select the option below
   utter_ask_FirstName:
-  - text: what is your name
+  - text: what is your name?
+  utter_ask_requestId:
+  - text: what is you request id?
 actions:
 - utter_greet
 - utter_did_that_help
@@ -156,5 +161,7 @@ actions:
 - action_close_request_Token
 - utter_greet_sentence
 - utter_ask_FirstName
+- utter_ask_requestId
 forms:
 - Email_form
+- requestId_form

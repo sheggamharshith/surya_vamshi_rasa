@@ -33,19 +33,20 @@ def create_Request(response_token,EmailId):
 
 
 ##################################### 3. Update Request ###########################################
-def update_request(response_token,EmailId):
+def update_request(response_token,EmailId,requestId):
     update_request_url = "https://api-wolken-demo.wolkenservicedesk.com/lur/external/generic/update_request"
 
     # Note: Wrong input from Documentation: Content-Type
-    headers = {"userPsNo": EmailId, "wolken_token": response_token, "Content-Type": "application/json"}
-
-    data = {"requestId": 1513602290, "threadVO": {"resDesc": "Test"}, "otherInfoVO": {"milestoneId": 5}}
-
-    all_request_res = requests.post(url=update_request_url, data=json.dumps(data), headers=headers)
-    
-    print(all_request_res)
-
-    return all_request_res
+    os.remove("C:\\Users\harsh\\Desktop\\ai intern\\ai intern\\TokenValidationCode\\final_prg\\input_update.json")
+    print("File Removed!")
+    headers = {"userPsNo": EmailId, "wolken_token": response_token, "Content-Type": "application/json","requestId": requestId}
+    with open('C:\\Users\harsh\\Desktop\\ai intern\\ai intern\\TokenValidationCode\\final_prg\\input_update.json', "w") as write_file:
+        json.dump(headers, write_file)
+    success = execute_js('.\\TokenValidationCode\\final_prg\\final_2_update.js')
+    with open("C:\\Users\harsh\\Desktop\\ai intern\\ai intern\\TokenValidationCode\\final_prg\\output_update.json", "r") as read_file:
+        data = json.load(read_file)
+    print(data)
+    return data
 
 #################################### 4. Get All Request #########################################
 def get_All_Request(response_token,EmailId):
@@ -73,15 +74,19 @@ def get_case_details(response_token,EmailId):
     return case_res
 
 #################################### 6. Close Request #########################################
-def close_Request(response_token,EmailId):
+def close_Request(response_token,EmailId,requestId):
     close_request_url = "https://api-wolken-demo.wolkenservicedesk.com/lur/external/generic/update_request"
-
+    try:
     # Note: Wrong input from Documentation: Content-Type
-    headers = {"userPsNo": EmailId , "wolken_token": response_token, "Content-Type": "application/json"}
-
-    data = {"requestId": 1513602290, "threadVO": {"resDesc": "Test"}, "otherInfoVO": {"milestoneId": 7}}
-
-    # Note: Wrong input from Documentation: Method
-    close_res = requests.get(url=close_request_url, headers=headers, data = json.dumps(data))
-    print(close_res.json())
-    return close_res
+        os.remove("C:\\Users\harsh\\Desktop\\ai intern\\ai intern\\TokenValidationCode\\final_prg\\input_close.json")
+        print("File Removed!")
+        headers = {"userPsNo": EmailId, "wolken_token": response_token, "Content-Type": "application/json","requestId": requestId}
+        with open('C:\\Users\harsh\\Desktop\\ai intern\\ai intern\\TokenValidationCode\\final_prg\\input_close.json', "w") as write_file:
+            json.dump(headers, write_file)
+        success = execute_js('.\\TokenValidationCode\\final_prg\\final_close.js')
+        with open("C:\\Users\harsh\\Desktop\\ai intern\\ai intern\\TokenValidationCode\\final_prg\\output_close.json", "r") as read_file:
+            data = json.load(read_file)
+        print(data)
+        return data
+    except Exception as e:
+        print(e)

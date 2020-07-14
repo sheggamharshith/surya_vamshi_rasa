@@ -109,6 +109,37 @@ class Email(FormAction):
         print("I have received the Email id: {}".format(tracker.get_latest_entity_values("Email")))
         dispatcher.utter_message("Saving your email id as {}".format(tracker.get_slot("Email")))
         return []
+
+class requestId(FormAction):
+    """Collects request id and adds it to the Api"""
+
+    def name(self):
+        return "requestId_form"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        print("requesrt over here")
+        return [
+            "requestId"
+            ]
+
+    def slot_mappings(self):
+        """This function will map the intent of the text"""
+        return {
+        "requestId": [self.from_entity(entity="requestId"),
+                    self.from_entity(entity="requestId"),self.from_text(),]
+        }
+    def submit(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+        ) -> List[Dict]:
+        '''This function will submit the form'''
+        print("I have received the Email id: {}".format(tracker.get_latest_entity_values("Email")))
+        dispatcher.utter_message("Saving your request id as {}".format(tracker.get_slot("requestId")))
+        return []
+        
 ####################################This for generating the token#################################################
 
 class GenerateToken(Action):
@@ -152,8 +183,9 @@ class CreaterequestToken(Action):
             #json_format = generatedJson.json()
             #file_saving.file_saver(json_format)
             dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson))
-        except:
+        except Exception as e:
             dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
+            print(e)
         return []
 
 class updaterequestToken(Action):
@@ -170,12 +202,13 @@ class updaterequestToken(Action):
             generatedToken = wapitest.login_module()
             print(generatedToken)
             dispatcher.utter_message(text="Here is you token for you validation {}".format(generatedToken))
-            generatedJson = wapitest.update_request(generatedToken , tracker.get_slot("Email"))
-            json_format = generatedJson.json()
+            generatedJson = wapitest.update_request(generatedToken , tracker.get_slot("Email"),tracker.get_slot("requestId"))
+            #json_format = generatedJson.json()
             #file_saving.file_saver(json_format)
-            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson.json()))
-        except:
+            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson))
+        except Exception as e:
             dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
+            print(e)
         return []
 
 class getCaserequestToken(Action):
@@ -216,10 +249,10 @@ class closerequestToken(Action):
             generatedToken = wapitest.login_module()
             print(generatedToken)
             dispatcher.utter_message(text="Here is you token for you validation {}".format(generatedToken))
-            generatedJson = wapitest.close_Request(generatedToken , tracker.get_slot("Email"))
-            json_format = generatedJson.json()
+            generatedJson = wapitest.close_Request(generatedToken , tracker.get_slot("Email"),tracker.get_slot("requestId"))
+            #json_format = generatedJson.json()
             #file_saving.file_saver(json_format)
-            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson.json()))
+            dispatcher.utter_message(text="now geting the json for you this {}".format(generatedJson))
         except :
             dispatcher.utter_message(text="Sorry there something wrong 😖 with the token.Please contact to the management🏢")
         return []
