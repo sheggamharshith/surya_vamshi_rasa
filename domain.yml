@@ -53,8 +53,6 @@ responses:
   utter_ask_again:
   - text: Okay! Let's start again, please tell me what do you need?
   - text: No issues! Let's try this again.🧐 Please repeat your query?
-  utter_car_service_respinse:
-  - text: okey i will generate a ticket for you car service
   utter_compliment:
   - text: Thanks a lot. 🤝
   utter_default:
@@ -164,7 +162,6 @@ actions:
 - utter_greet_sentence
 - utter_ask_FirstName
 - utter_requestId
-- utter_car_service_respinse
 forms:
 - Email_form
 - requestId_form
