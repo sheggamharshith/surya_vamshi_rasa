@@ -252,17 +252,10 @@
 - email id is [surya@facebook.com](Email)
 - This is my email id [suray@isro.in](Email)
 - [surya@facebook.net] (Email)
-<<<<<<< HEAD
-- My name is [harshith](FirstName) 
-- my name is [ramulu](FirstName) 
-- they call me [vamshi](FirstName) 
-- call me [shiva](FirstName) 
-=======
 - My name is [harshith](FirstName)
 - my name is [ramulu](FirstName)
 - they call me [vamshi](FirstName)
 - call me [shiva](FirstName)
->>>>>>> 92235b3c36aec16df9fe2151ab6671fb9e6db46e
 - my request id is [12312](requestId)
 - [12312312](requestId)
 - [11232](requestId)
@@ -273,11 +266,8 @@
 - start thr testing process
 - testing process
 
-
-<<<<<<< HEAD
-
-
-=======
 ## intent:createNewApiRequest
-- I need to generate a ticket for my api request 
->>>>>>> 92235b3c36aec16df9fe2151ab6671fb9e6db46e
+- I need to generate a ticket for my api request
+
+## intent:test
+- adkfkdskv
